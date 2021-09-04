@@ -16,7 +16,7 @@ int main() {
     n_es_paralleli[2]=3;
     vector <vector <string>> prof_es_inf{{"Mario", "Paolo", "Giovanni"},{"Gabriele", "Marcello", "Simone", "Giorgio"},
                                          {"Luca1", "Luca2", "Luca3", "Luca4", "Luca5", "Luca6"}};
-    
+
     for (int i=0; i < esami.size(); i++)
     {
         if (s1.set_id_esame_nello_slot(esami[i], prof_es_inf[i], n_es_paralleli[i]))

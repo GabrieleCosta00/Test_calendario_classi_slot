@@ -14,9 +14,9 @@ bool slot::set_id_esame_nello_slot(const string &id_esame, const vector<string> 
 
     vector<string>::iterator it;
 
-    if ((_id_esami.size() + n_vers_parall) >= n_max_es_in_slot)
+    if ((_id_esami.size() + n_vers_parall) > n_max_es_in_slot)
     {
-        cout<<"Massima capienza dello slot raggiunta!"<<endl;
+        cout<<endl<<"Massima capienza dello slot raggiunta! (esame "<<id_esame<<")"<<endl;
         return false;
 
     } else {

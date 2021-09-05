@@ -5,7 +5,7 @@
 #ifndef PROVA_CLAENDARIO_CON_CLASSI_SLOT_H
 #define PROVA_CLAENDARIO_CON_CLASSI_SLOT_H
 
-#define n_max_es_in_slot 10
+#define n_max_es_in_slot 4
 
 #include <vector>
 #include <string>

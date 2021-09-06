@@ -46,7 +46,7 @@ bool giorno::set_id_esame_nel_giorno(const string &id_esame, const vector <strin
 
 }
 
-void giorno::print_cal_giorno() {
+void giorno::print_giorno() {
 
     cout<<endl<<"------------------------------------------------------------------"<<endl;
 

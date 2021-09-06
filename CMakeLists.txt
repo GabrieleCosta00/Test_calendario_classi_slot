@@ -3,4 +3,4 @@ project(Test_calendario_classi_slot)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Test_calendario_classi_slot main.cpp slot.cpp giorno.cpp calendario.cpp)
+add_executable(Test_calendario_classi_slot main.cpp slot.cpp giorno.cpp sessione.cpp calendario.cpp appello.cpp appello.h)

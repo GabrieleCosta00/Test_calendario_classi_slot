@@ -1,15 +1,10 @@
-//
-// Created by Gabriele on 05/09/2021.
-//
 
 #ifndef TEST_CALENDARIO_CLASSI_SLOT_GIORNO_H
 #define TEST_CALENDARIO_CLASSI_SLOT_GIORNO_H
 
 #define n_slot 6
 
-#include <vector>
 #include "slot.h"
-
 
 
 class giorno{

@@ -1,14 +1,5 @@
-//
-// Created by Gabriele on 01/09/2021.
-//
 
-#include <vector>
-#include <algorithm>
-#include <iostream>
-#include <string>
 #include "slot.h"
-
-using namespace std;
 
 bool slot::set_id_esame_nello_slot(const string &id_esame, const vector<string> &id_professori, int n_vers_parall) {
 
@@ -26,7 +17,7 @@ bool slot::set_id_esame_nello_slot(const string &id_esame, const vector<string> 
             it = find(_id_professori.begin(), _id_professori.end(), id_professori[j]);
             if (it != _id_professori.end())
             {
-                cout << "Professore gia' impegnato con un altro esame!" << endl;
+                cout<<endl<< "Professore gia' impegnato con un altro esame!" <<endl;
                 return false;
             }
         }
@@ -41,10 +32,6 @@ bool slot::set_id_esame_nello_slot(const string &id_esame, const vector<string> 
     }
     return true;
 }
-
-/*const vector<string> &slot::get_id_esami_dallo_slot() const {
-    return _id_esami;
-}*/
 
 void slot::print_professori() {
     cout<<endl<<"Professori: ";
@@ -62,7 +49,3 @@ void slot::print_id_esami() {
     }
 
 }
-
-/*slot::slot() {
-
-}*/

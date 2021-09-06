@@ -1,13 +1,7 @@
-#include <iostream>
+
 #include "calendario.h"
-#include <vector>
-#include <string>
-
-using namespace std;
-
 
 int main() {
-
 
     calendario cal1;
     giorno g1;
@@ -29,5 +23,4 @@ int main() {
 
     cal1.print_calendario();
 
-    return 0;
 }

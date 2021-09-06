@@ -1,14 +1,5 @@
-//
-// Created by Gabriele on 06/09/2021.
-//
 
 #include "calendario.h"
-#include <iostream>
-#include <algorithm>
-#include <vector>
-#include <string>
-
-using namespace std;
 
 calendario::calendario() {
 
@@ -86,7 +77,7 @@ bool calendario::set_id_esame_nel_calendario(const string &id_esame, const vecto
         }
     }
 
-    cout<<"Esame "<<id_esame<<" non inserito nel calendario!"<<endl;
+    cout<<endl<<"Esame "<<id_esame<<" non inserito nel calendario!"<<endl;
     return false;
 
 }
@@ -97,7 +88,7 @@ void calendario::print_calendario() {
 
     for(int i=0; i < n_giorni; i++)
     {
-        cout<<"Giorno "<<i+1<<": "<<endl;
+        cout<<endl<<"Giorno "<<i+1<<": "<<endl;
         cout<<"\t";
         giorni[i].print_cal_giorno();
         cout<<endl;

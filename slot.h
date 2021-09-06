@@ -1,6 +1,3 @@
-//
-// Created by Gabriele on 01/09/2021.
-//
 
 #ifndef PROVA_CLAENDARIO_CON_CLASSI_SLOT_H
 #define PROVA_CLAENDARIO_CON_CLASSI_SLOT_H
@@ -9,6 +6,8 @@
 
 #include <vector>
 #include <string>
+#include <algorithm>
+#include <iostream>
 
 using namespace std;
 
@@ -22,15 +21,9 @@ private:
 
 public:
 
-//    slot();
     bool set_id_esame_nello_slot(const string &id_esame, const vector <string> &id_professori, int n_vers_paral);
-//    const vector<string> &get_id_esami_dallo_slot() const;
     void print_professori();
     void print_id_esami();
-
-
-
-
 
 };
 

@@ -1,14 +1,5 @@
-//
-// Created by Gabriele on 05/09/2021.
-//
 
-#include <vector>
-#include <string>
-#include <algorithm>
-#include <iostream>
 #include "giorno.h"
-
-using namespace std;
 
 giorno::giorno() {
 
@@ -50,7 +41,7 @@ bool giorno::set_id_esame_nel_giorno(const string &id_esame, const vector <strin
         }
     }
 
-    cout<<"Esame "<<id_esame<<" non inserito nel giorno!"<<endl;
+    cout<<endl<<"Esame "<<id_esame<<" non inserito nel giorno!"<<endl;
     return false;
 
 }

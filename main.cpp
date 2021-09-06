@@ -1,10 +1,13 @@
+/*Per i corsi spenti è sufficiente inserirli come di pertinenza del semestre 3 (s3). In questo modo vengono gestiti
+opportunamente: risultano inseriti solo nei secondi appelli e nella sessione autunnale*/
+
 
 #include "calendario.h"
 
 int main() {
 
     calendario cal1;
-    vector <string> esami {"000000","000011", "000022"};
+    vector <string> esami {"000000", "000011", "000022"};
     int n_es_paralleli[3] = {1, 2, 3};
     vector <vector <string>> cds{{"cds1"}, {"cds1", "cds3"}, {"cds4", "cds5", "cds6"}};
     vector <vector <string>> anni{{"a2"}, {"a2", "a2"}, {"a1", "a1", "a1"}};
@@ -18,7 +21,7 @@ int main() {
         if (!cal1.set_id_esame_nel_calendario(esami[i], cds[i], anni[i], n_slot_necessari[i], prof_esami[i],
                                                    n_es_paralleli[i], semestri[i]))
         {
-            cout<<"Qualcosa e' andato storto!"<<endl;
+            cout<<endl<<"Qualcosa e' andato storto!"<<endl;
         }
     }
 

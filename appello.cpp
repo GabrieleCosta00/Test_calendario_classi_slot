@@ -36,7 +36,7 @@ bool appello::set_id_esame_nell_appello(const string &id_esame, const vector<str
         else
         {
             inserisco_nel_giorno ++;
-            cout<<endl<<"Esame "<<id_esame<<" spostato nel secondo appello di un giorno!"<<endl;
+            cout<<endl<<"Esame "<<id_esame<<" spostato di un giorno!"<<endl;
         }
     }
 

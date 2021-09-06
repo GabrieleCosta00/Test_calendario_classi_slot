@@ -39,7 +39,7 @@ bool sessione::set_id_esame_nella_sessione(const string &id_esame, const vector 
         }
         else
         {
-            if(_quale_sessione == semestre_dell_esame[0])
+            if((_quale_sessione == semestre_dell_esame[0]) && (_quale_sessione != "s3"))
             {
                 if(!_appelli[i].set_id_esame_nell_appello(id_esame, id_cds, anno, n_slot_necessari, id_professori, n_vers_paral))
                 {

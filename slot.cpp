@@ -7,7 +7,7 @@ bool slot::set_id_esame_nello_slot(const string &id_esame, const vector<string> 
 
     if ((_id_esami.size() + n_vers_parall) > n_max_es_in_slot)
     {
-        cout<<endl<<"Massima capienza dello slot raggiunta! (esame "<<id_esame<<")"<<endl;
+//        cout<<endl<<"Massima capienza dello slot raggiunta! (esame "<<id_esame<<")"<<endl;
         return false;
 
     } else {
@@ -17,7 +17,7 @@ bool slot::set_id_esame_nello_slot(const string &id_esame, const vector<string> 
             it = find(_id_professori.begin(), _id_professori.end(), id_professori[j]);
             if (it != _id_professori.end())
             {
-                cout<<endl<< "Professore gia' impegnato con un altro esame!" <<endl;
+//                cout<<endl<< "Professore gia' impegnato con un altro esame!" <<endl;
                 return false;
             }
         }

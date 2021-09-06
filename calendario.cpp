@@ -19,7 +19,7 @@ bool calendario::set_id_esame_nel_calendario(const string &id_esame, const vecto
         if(!_sessioni[i].set_id_esame_nella_sessione(id_esame, id_cds, anno, n_slot_necessari, id_professori, n_vers_paral,
                                                      semestre_dell_esame))
         {
-            cout<<endl<<"Esame "<<id_esame<<" non inserito nella sessione "<<i+1<<"!"<<endl;
+//            cout<<endl<<"Esame "<<id_esame<<" non inserito nella sessione "<<i+1<<"!"<<endl;
         }
     }
 

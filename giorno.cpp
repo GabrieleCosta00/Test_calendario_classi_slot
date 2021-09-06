@@ -41,7 +41,7 @@ bool giorno::set_id_esame_nel_giorno(const string &id_esame, const vector <strin
         }
     }
 
-    cout<<endl<<"Esame "<<id_esame<<" non inserito nel giorno!"<<endl;
+//    cout<<endl<<"Esame "<<id_esame<<" non inserito nel giorno!"<<endl;
     return false;
 
 }

@@ -33,7 +33,7 @@ bool sessione::set_id_esame_nella_sessione(const string &id_esame, const vector 
         {
             if(!_appelli[i].set_id_esame_nell_appello(id_esame, id_cds, anno, n_slot_necessari, id_professori, n_vers_paral))
             {
-                cout<<endl<<"Esame "<<id_esame<<" non inserito nell'appello "<<i+1<<" della sessione "<<_quale_sessione<<"!"<<endl;
+//                cout<<endl<<"Esame "<<id_esame<<" non inserito nell'appello "<<i+1<<" della sessione "<<_quale_sessione<<"!"<<endl;
                 inserito_nell_appello[i] = false;
             }
         }
@@ -43,7 +43,7 @@ bool sessione::set_id_esame_nella_sessione(const string &id_esame, const vector 
             {
                 if(!_appelli[i].set_id_esame_nell_appello(id_esame, id_cds, anno, n_slot_necessari, id_professori, n_vers_paral))
                 {
-                    cout<<endl<<"Esame "<<id_esame<<" non inserito nell'appello "<<i+1<<" della sessione "<<_quale_sessione<<"!"<<endl;
+//                    cout<<endl<<"Esame "<<id_esame<<" non inserito nell'appello "<<i+1<<" della sessione "<<_quale_sessione<<"!"<<endl;
                     inserito_nell_appello[i] = false;
                 }
             }

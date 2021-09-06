@@ -21,7 +21,7 @@ int main() {
         if (!cal1.set_id_esame_nel_calendario(esami[i], cds[i], anni[i], n_slot_necessari[i], prof_esami[i],
                                                    n_es_paralleli[i], semestri[i]))
         {
-            cout<<endl<<"Qualcosa e' andato storto!"<<endl;
+//            cout<<endl<<"Qualcosa e' andato storto!"<<endl;
         }
     }
 

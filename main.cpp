@@ -1,5 +1,6 @@
 /*Per i corsi spenti è sufficiente inserirli come di pertinenza del semestre 3 (s3). In questo modo vengono gestiti
-opportunamente: risultano inseriti solo nei secondi appelli e nella sessione autunnale*/
+opportunamente: risultano inseriti solo nei secondi appelli e nella sessione autunnale
+La gestione delle indisponibilità dei professori è impostata, ma commentata*/
 
 
 #include "calendario.h"

@@ -2,7 +2,7 @@
 #ifndef TEST_CALENDARIO_CLASSI_SLOT_GIORNO_H
 #define TEST_CALENDARIO_CLASSI_SLOT_GIORNO_H
 
-#define n_slot 6
+#define n_slot 3
 
 #include "slot.h"
 

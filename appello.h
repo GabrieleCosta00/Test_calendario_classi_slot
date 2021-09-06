@@ -4,6 +4,8 @@
 
 #include "giorno.h"
 
+#define n_giorni_appello_1 12
+#define n_giorni_appello_2 24
 
 class appello {
 
@@ -18,6 +20,7 @@ public:
     bool set_id_esame_nell_appello(const string &id_esame, const vector <string> &id_cds, const vector <string> &anno,
                                    const int n_slot_necessari, const vector<string> &id_professori, int n_vers_paral);
     bool trovato_cds_anno(const vector <string> &id_cds, const vector <string> &anno, const int inserisco_nel_giorno);
+    bool prof_disponibili(const vector <string> &id_professori, const int inserisco_nel_giorno);
     void print_appello();
     const int get_quale_appello() const;
 

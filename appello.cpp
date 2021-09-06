@@ -6,11 +6,11 @@ appello::appello(const int quale_appello) {
     _quale_appello = quale_appello;
     if (_quale_appello == 1)
     {
-        _giorni.resize(14);
+        _giorni.resize(n_giorni_appello_1);
     }
     else
     {
-        _giorni.resize(28);
+        _giorni.resize(n_giorni_appello_2);
     }
 
 }
@@ -22,7 +22,7 @@ bool appello::set_id_esame_nell_appello(const string &id_esame, const vector<str
 
     while(inserisco_nel_giorno < _giorni.size())
     {
-        if(!trovato_cds_anno(id_cds, anno, inserisco_nel_giorno))
+        if((!trovato_cds_anno(id_cds, anno, inserisco_nel_giorno)) && (prof_disponibili(id_professori, inserisco_nel_giorno)))
         {
             if(!_giorni[inserisco_nel_giorno].set_id_esame_nel_giorno(id_esame, id_cds, anno, n_slot_necessari, id_professori, n_vers_paral))
             {
@@ -118,4 +118,16 @@ void appello::print_appello() {
 
 const int appello::get_quale_appello() const {
     return _quale_appello;
+}
+
+bool appello::prof_disponibili(const vector<string> &id_professori, const int inserisco_nel_giorno) {
+
+    /*for(int i=0; i < id_professori.size(); i++)
+    {
+        for(int j=0; j < id_professori[i].get_indisponibilita.size(); j++)
+        {
+            // se inserisco_nel_giorno è dentro indisponibilità allora return false
+        }
+    }*/
+    return true;
 }

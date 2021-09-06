@@ -3,9 +3,9 @@
 
 calendario::calendario() {
 
-    _sessioni.push_back(sessione("s1"));
-    _sessioni.push_back(sessione("s2"));
-    _sessioni.push_back(sessione("s3"));
+    _sessioni.emplace_back("s1");
+    _sessioni.emplace_back("s2");
+    _sessioni.emplace_back("s3");
 
 }
 

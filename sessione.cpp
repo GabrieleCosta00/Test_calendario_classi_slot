@@ -6,12 +6,12 @@ sessione::sessione(const string &quale_sessione) {
     _quale_sessione = quale_sessione;
     if (_quale_sessione != "s3")
     {
-        _appelli.push_back(appello(1));
-        _appelli.push_back(appello(2));
+        _appelli.emplace_back(1);
+        _appelli.emplace_back(2);
     }
     else
     {
-        _appelli.push_back(appello(2));
+        _appelli.emplace_back(2);
     }
 
 }

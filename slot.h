@@ -12,17 +12,19 @@
 using namespace std;
 
 
-class slot{
+class slot {
 
 private:
 
-    vector <string> _id_esami;
-    vector <string> _id_professori;
+    vector<string> _id_esami;
+    vector<string> _id_professori;
 
 public:
 
-    bool set_id_esame_nello_slot(const string &id_esame, const vector <string> &id_professori, int n_vers_paral);
+    bool set_id_esame_nello_slot(const string &id_esame, const vector<string> &id_professori, int n_vers_paral);
+
     void print_professori();
+
     void print_id_esami();
 
 };

@@ -16,7 +16,7 @@ giorno::giorno() {
 
 }
 
-bool giorno::set_id_esame_nel_giorno(const string &id_esame, const vector <string> &id_cds, const int anno,
+bool giorno::set_id_esame_nel_giorno(const string &id_esame, const vector <string> &id_cds, const vector <string> &anno,
                                      const int n_slot_necessari, const vector<string> &id_professori, int n_vers_paral)
 {
 
@@ -38,8 +38,9 @@ bool giorno::set_id_esame_nel_giorno(const string &id_esame, const vector <strin
             for(int j=0; j < n_vers_paral; j++)
             {
                 _id_cds_inseriti.push_back(id_cds[j]);
+                _anni_inseriti.push_back(anno[j]);
             }
-            _anni_inseriti.push_back(anno);
+
             return true;
         }
         else
@@ -70,4 +71,12 @@ void giorno::print_cal_giorno() {
 
     cout<<endl<<"------------------------------------------------------------------"<<endl;
 
+}
+
+vector<string> &giorno::get_id_cds_inseriti() {
+    return _id_cds_inseriti;
+}
+
+vector<string> &giorno::get_anni_inseriti() {
+    return _anni_inseriti;
 }

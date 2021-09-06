@@ -1,6 +1,7 @@
 #include <iostream>
-#include "slot.h"
-#include "giorno.h"
+//#include "slot.h"
+//#include "giorno.h"
+#include "calendario.h"
 #include <vector>
 #include <string>
 
@@ -9,6 +10,8 @@ using namespace std;
 
 int main() {
 
+
+    calendario cal1;
     giorno g1;
     vector <string> esami{"000000","000011", "000022"};
     int n_es_paralleli[3] = {1, 2, 3};
@@ -20,16 +23,13 @@ int main() {
 
     for (int i=0; i < esami.size(); i++)
     {
-        if (g1.set_id_esame_nel_giorno(esami[i], cds[i], anni[i], n_slot_necessari[i], prof_esami[i], n_es_paralleli[i]))
-        {
-            g1.print_cal_giorno();
-        }
-        else
+        if (!cal1.set_id_esame_nel_calendario(esami[i], cds[i], anni[i], n_slot_necessari[i], prof_esami[i], n_es_paralleli[i]))
         {
             cout<<"Qualcosa e' andato storto!"<<endl;
         }
     }
 
+    cal1.print_calendario();
 
     return 0;
 }

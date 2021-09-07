@@ -46,7 +46,7 @@ public:
 
         giorno();
 
-        bool set_id_esame_nel_giorno(const string &id_esame, const vector<string> &id_cds, const vector<string> &anno,
+        bool set_id_esame_nel_giorno(const string &id_esame, const vector<string> &id_cds, const string &anno,
                                      const int n_slot_necessari, const vector<string> &id_professori, int n_vers_paral);
 
         void print_giorno();
@@ -67,10 +67,10 @@ public:
 
         appello(const int quale_appello);
 
-        bool set_id_esame_nell_appello(const string &id_esame, const vector<string> &id_cds, const vector<string> &anno,
+        bool set_id_esame_nell_appello(const string &id_esame, const vector<string> &id_cds, const string &anno,
                                        const int n_slot_necessari, const vector<string> &id_professori, int n_vers_paral);
 
-        bool trovato_cds_anno(const vector<string> &id_cds, const vector<string> &anno, const int inserisco_nel_giorno);
+        bool trovato_cds_anno(const vector<string> &id_cds, const string &anno, const int inserisco_nel_giorno);
 
         bool prof_disponibili(const vector<string> &id_professori, const int inserisco_nel_giorno);
 
@@ -94,9 +94,9 @@ public:
 
         sessione(const string &quale_sessione);
 
-        bool set_id_esame_nella_sessione(const string &id_esame, const vector<string> &id_cds, const vector<string> &anno,
+        bool set_id_esame_nella_sessione(const string &id_esame, const vector<string> &id_cds, const string &anno,
                                          const int n_slot_necessari, const vector<string> &id_professori, int n_vers_paral,
-                                         const vector<string> &semestre_dell_esame);
+                                         const string &semestre_dell_esame);
 
         void print_sessione();
 
@@ -111,16 +111,16 @@ public:
 
         calendar();
 
-        bool set_id_esame_nel_calendario(const string &id_esame, const vector<string> &id_cds, const vector<string> &anno,
+        bool set_id_esame_nel_calendario(const string &id_esame, const vector<string> &id_cds, const string &anno,
                                          const int n_slot_necessari, const vector<string> &id_professori, int n_vers_paral,
-                                         const vector<string> &semestre_dell_esame);
+                                         const string &semestre_dell_esame);
 
         void print_calendario();
 
     };
-    bool set_id_esame_nel_calendario(const string &id_esame, const vector<string> &id_cds, const vector<string> &anno,
+    bool set_id_esame_nel_calendario(const string &id_esame, const vector<string> &id_cds, const string &anno,
                                      const int n_slot_necessari, const vector<string> &id_professori, int n_vers_paral,
-                                     const vector<string> &semestre_dell_esame);
+                                     const string &semestre_dell_esame);
     void print_calendar();
 
 private:

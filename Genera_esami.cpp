@@ -9,9 +9,9 @@ Genera_esami::calendar::calendar() {
 }
 
 bool Genera_esami::calendar::set_id_esame_nel_calendario(const string &id_esame, const vector<string> &id_cds,
-                                                         const vector<string> &anno, const int n_slot_necessari,
+                                                         const string &anno, const int n_slot_necessari,
                                                          const vector<string> &id_professori, int n_vers_paral,
-                                                         const vector<string> &semestre_dell_esame) {
+                                                         const string &semestre_dell_esame) {
 
     for (int i = 0; i < _sessioni.size(); i++) {
         if (!_sessioni[i].set_id_esame_nella_sessione(id_esame, id_cds, anno, n_slot_necessari, id_professori,
@@ -47,13 +47,18 @@ Genera_esami::appello::appello(const int quale_appello) {
 
 bool
 Genera_esami::appello::set_id_esame_nell_appello(const string &id_esame, const vector<string> &id_cds,
-                                                 const vector<string> &anno,
+                                                 const string &anno,
                                                  const int n_slot_necessari, const vector<string> &id_professori,
                                                  int n_vers_paral) {
 
     int inserisco_nel_giorno = 0;
 
     while (inserisco_nel_giorno < _giorni.size()) {
+
+//        TODO: Per ogni esame del gruppo faccio i controlli, se li passo...
+//              ... per ogni esame del gruppo provo ad inserirli nel giorno[inserisco_nel_giorno]...
+//              ... se li ho inseriti tutti ritorno true, altrimenti false
+
         if ((!trovato_cds_anno(id_cds, anno, inserisco_nel_giorno)) &&
             (prof_disponibili(id_professori, inserisco_nel_giorno))) {
             if (!_giorni[inserisco_nel_giorno].set_id_esame_nel_giorno(id_esame, id_cds, anno, n_slot_necessari,
@@ -73,7 +78,7 @@ Genera_esami::appello::set_id_esame_nell_appello(const string &id_esame, const v
 }
 
 bool
-Genera_esami::appello::trovato_cds_anno(const vector<string> &id_cds, const vector<string> &anno,
+Genera_esami::appello::trovato_cds_anno(const vector<string> &id_cds, const string &anno,
                                         const int inserisco_nel_giorno) {
 
     bool trovato = false;
@@ -85,13 +90,13 @@ Genera_esami::appello::trovato_cds_anno(const vector<string> &id_cds, const vect
         it_oggi = find_cds_anno(_giorni[inserisco_nel_giorno].get_id_cds_inseriti().begin(),
                                 _giorni[inserisco_nel_giorno].get_id_cds_inseriti().end(),
                                 _giorni[inserisco_nel_giorno].get_anni_inseriti().begin(),
-                                id_cds[i], anno[i]);
+                                id_cds[i], anno);
 
         if (inserisco_nel_giorno != 0) {
             it_ieri = find_cds_anno(_giorni[inserisco_nel_giorno - 1].get_id_cds_inseriti().begin(),
                                     _giorni[inserisco_nel_giorno - 1].get_id_cds_inseriti().end(),
                                     _giorni[inserisco_nel_giorno - 1].get_anni_inseriti().begin(),
-                                    id_cds[i], anno[i]);
+                                    id_cds[i], anno);
         } else {
             it_ieri = _giorni[inserisco_nel_giorno - 1].get_id_cds_inseriti().end();
         }
@@ -100,7 +105,7 @@ Genera_esami::appello::trovato_cds_anno(const vector<string> &id_cds, const vect
             it_domani = find_cds_anno(_giorni[inserisco_nel_giorno + 1].get_id_cds_inseriti().begin(),
                                       _giorni[inserisco_nel_giorno + 1].get_id_cds_inseriti().end(),
                                       _giorni[inserisco_nel_giorno + 1].get_anni_inseriti().begin(),
-                                      id_cds[i], anno[i]);
+                                      id_cds[i], anno);
         } else {
             it_domani = _giorni[inserisco_nel_giorno + 1].get_id_cds_inseriti().end();
         }
@@ -163,9 +168,12 @@ Genera_esami::giorno::giorno() {
 }
 
 bool Genera_esami::giorno::set_id_esame_nel_giorno(const string &id_esame, const vector<string> &id_cds,
-                                                   const vector<string> &anno,
+                                                   const string &anno,
                                                    const int n_slot_necessari, const vector<string> &id_professori,
                                                    int n_vers_paral) {
+
+//    TODO: ragionare a gruppo_di_esami_inserito invece che esame_inserito
+//          e aggiornare _id_cds_inseriti e _anni_inseriti anche per ogni esame del gruppo
 
     bool esame_inserito = true;
     int inserisco_nello_slot = 0;
@@ -181,7 +189,7 @@ bool Genera_esami::giorno::set_id_esame_nel_giorno(const string &id_esame, const
         if (esame_inserito) {
             for (int j = 0; j < n_vers_paral; j++) {
                 _id_cds_inseriti.push_back(id_cds[j]);
-                _anni_inseriti.push_back(anno[j]);
+                _anni_inseriti.push_back(anno);
             }
 
             return true;
@@ -234,9 +242,9 @@ Genera_esami::sessione::sessione(const string &quale_sessione) {
 }
 
 bool Genera_esami::sessione::set_id_esame_nella_sessione(const string &id_esame, const vector<string> &id_cds,
-                                                         const vector<string> &anno, const int n_slot_necessari,
+                                                         const string &anno, const int n_slot_necessari,
                                                          const vector<string> &id_professori, int n_vers_paral,
-                                                         const vector<string> &semestre_dell_esame) {
+                                                         const string &semestre_dell_esame) {
     vector<bool> inserito_nell_appello(_appelli.size());
     for (auto &&j: inserito_nell_appello) {
         j = true;
@@ -250,7 +258,7 @@ bool Genera_esami::sessione::set_id_esame_nella_sessione(const string &id_esame,
                 inserito_nell_appello[i] = false;
             }
         } else {
-            if ((_quale_sessione == semestre_dell_esame[0]) && (_quale_sessione != "s3")) {
+            if ((_quale_sessione == semestre_dell_esame) && (_quale_sessione != "s3")) {
                 if (!_appelli[i].set_id_esame_nell_appello(id_esame, id_cds, anno, n_slot_necessari, id_professori,
                                                            n_vers_paral)) {
 //                    cout<<endl<<"Esame "<<id_esame<<" non inserito nell'appello "<<i+1<<" della sessione "<<_quale_sessione<<"!"<<endl;
@@ -285,6 +293,9 @@ void Genera_esami::sessione::print_sessione() {
 
 bool Genera_esami::slot::set_id_esame_nello_slot(const string &id_esame, const vector<string> &id_professori,
                                                  int n_vers_parall) {
+
+//    TODO: (n_vers_parall * n_raggruppamenti) nel primo if e
+//          fare l' _id_esami.push_back per ogni esame raggruppato
 
     vector<string>::iterator it;
 
@@ -327,9 +338,9 @@ void Genera_esami::slot::print_id_esami() {
 }
 
 bool Genera_esami::set_id_esame_nel_calendario(const string &id_esame, const vector<string> &id_cds,
-                                               const vector<string> &anno, const int n_slot_necessari,
+                                               const string &anno, const int n_slot_necessari,
                                                const vector<string> &id_professori, int n_vers_paral,
-                                               const vector<string> &semestre_dell_esame) {
+                                               const string &semestre_dell_esame) {
     if (!_cal1.set_id_esame_nel_calendario(id_esame, id_cds, anno, n_slot_necessari, id_professori,
                                            n_vers_paral, semestre_dell_esame)) {
         //            cout<<endl<<"Qualcosa e' andato storto!"<<endl;

@@ -89,10 +89,10 @@ public:
 
         vector<string> &get_id_esami_inseriti();
 
-        template<class InputIterator, class T>
+        template<class InputIterator>
         InputIterator
-        find_cds_anno(InputIterator first_cds, InputIterator last_cds, InputIterator first_anno, const T &cds,
-                      const T &anno);
+        find_cds_anno(InputIterator first_cds, InputIterator last_cds, InputIterator first_anno, const string &cds,
+                      const string &anno);
 
     };
 

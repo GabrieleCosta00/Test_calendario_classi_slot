@@ -246,13 +246,11 @@ Genera_esami::appello::trovato_cds_anno(const vector<string> &id_cds, const stri
     return trovato;
 }
 
-// TODO: togliere T e metterci string
-
-template<class InputIterator, class T>
+template<class InputIterator>
 InputIterator
 Genera_esami::appello::find_cds_anno(InputIterator first_cds, InputIterator last_cds, InputIterator first_anno,
-                                     const T &cds,
-                                     const T &anno) {
+                                     const string &cds,
+                                     const string &anno) {
     while (first_cds != last_cds) {
         if ((*first_cds == cds) && (*first_anno == anno)) return first_cds;
         ++first_cds;

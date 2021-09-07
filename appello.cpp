@@ -78,6 +78,8 @@ appello::trovato_cds_anno(const vector<string> &id_cds, const vector<string> &an
     return trovato;
 }
 
+// TODO: togliere T e metterci string
+
 template<class InputIterator, class T>
 InputIterator
 appello::find_cds_anno(InputIterator first_cds, InputIterator last_cds, InputIterator first_anno, const T &cds,

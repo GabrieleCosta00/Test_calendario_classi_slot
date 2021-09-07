@@ -1,7 +1,7 @@
 
-#include "calendario.h"
+#include "calendar.h"
 
-calendario::calendario() {
+calendar::calendar() {
 
     _sessioni.emplace_back("s1");
     _sessioni.emplace_back("s2");
@@ -9,7 +9,7 @@ calendario::calendario() {
 
 }
 
-bool calendario::set_id_esame_nel_calendario(const string &id_esame, const vector<string> &id_cds,
+bool calendar::set_id_esame_nel_calendario(const string &id_esame, const vector<string> &id_cds,
                                              const vector<string> &anno, const int n_slot_necessari,
                                              const vector<string> &id_professori, int n_vers_paral,
                                              const vector<string> &semestre_dell_esame) {
@@ -19,12 +19,13 @@ bool calendario::set_id_esame_nel_calendario(const string &id_esame, const vecto
                                                       n_vers_paral,
                                                       semestre_dell_esame)) {
 //            cout<<endl<<"Esame "<<id_esame<<" non inserito nella sessione "<<i+1<<"!"<<endl;
+            return false;
         }
     }
-
+    return true;
 }
 
-void calendario::print_calendario() {
+void calendar::print_calendario() {
 
     cout << endl << "Calendario: " << endl << endl;
     for (int i = 0; i < _sessioni.size(); i++) {

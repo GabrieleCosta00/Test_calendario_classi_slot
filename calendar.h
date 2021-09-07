@@ -4,7 +4,7 @@
 
 #include "sessione.h"
 
-class calendario {
+class calendar {
 
 private:
 
@@ -12,7 +12,7 @@ private:
 
 public:
 
-    calendario();
+    calendar();
 
     bool set_id_esame_nel_calendario(const string &id_esame, const vector<string> &id_cds, const vector<string> &anno,
                                      const int n_slot_necessari, const vector<string> &id_professori, int n_vers_paral,

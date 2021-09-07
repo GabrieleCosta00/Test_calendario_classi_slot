@@ -3,11 +3,11 @@ opportunamente: risultano inseriti solo nei secondi appelli e nella sessione aut
 La gestione delle indisponibilità dei professori è impostata, ma commentata*/
 
 
-#include "calendario.h"
+#include "Genera_esami.h"
 
 int main() {
 
-    calendario cal1;
+    Genera_esami cal1;
     vector<string> esami{"000000", "000011", "000022"};
     int n_es_paralleli[3] = {1, 2, 3};
     vector<vector<string>> cds{{"cds1"},
@@ -31,6 +31,6 @@ int main() {
         }
     }
 
-    cal1.print_calendario();
+    cal1.print_calendar();
 
 }
